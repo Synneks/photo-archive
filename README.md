@@ -13,6 +13,7 @@ If you are not familiar with the different technologies used in this project, pl
 
 - [x] Make it deployable (/w Vercel)
 - [x] Scaffold basic ui with mock data
+- [x] Tidy up build process
 - [] Set up a db (w/ Vercel Postgres)
 - [] Attach db to ui
 - [] Add authentication (w/ Clerk)
