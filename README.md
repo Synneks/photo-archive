@@ -11,8 +11,8 @@ If you are not familiar with the different technologies used in this project, pl
 
 ## TODO
 
-- [] Make it deployable (/w Vercel)
-- [] Scaffold basic ui with mock data
+- [x] Make it deployable (/w Vercel)
+- [x] Scaffold basic ui with mock data
 - [] Set up a db (w/ Vercel Postgres)
 - [] Attach db to ui
 - [] Add authentication (w/ Clerk)
