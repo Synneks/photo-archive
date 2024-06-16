@@ -16,7 +16,7 @@ If you are not familiar with the different technologies used in this project, pl
 - [x] Tidy up build process
 - [x] Set up a db (w/ Vercel Postgres)
 - [x] Attach db to ui
-- [] Add authentication (w/ Clerk)
+- [x] Add authentication (w/ Clerk)
 - [] Add image upload
 - [] Error management (w/ Sentry)
 - [] Routing/image pate (parallel route)
