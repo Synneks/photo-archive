@@ -14,8 +14,8 @@ If you are not familiar with the different technologies used in this project, pl
 - [x] Make it deployable (/w Vercel)
 - [x] Scaffold basic ui with mock data
 - [x] Tidy up build process
-- [] Set up a db (w/ Vercel Postgres)
-- [] Attach db to ui
+- [x] Set up a db (w/ Vercel Postgres)
+- [x] Attach db to ui
 - [] Add authentication (w/ Clerk)
 - [] Add image upload
 - [] Error management (w/ Sentry)
