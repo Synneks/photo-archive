@@ -17,7 +17,7 @@ If you are not familiar with the different technologies used in this project, pl
 - [x] Set up a db (w/ Vercel Postgres)
 - [x] Attach db to ui
 - [x] Add authentication (w/ Clerk)
-- [] Add image upload
+- [x] Add image upload
 - [] "taint" (server-only)
 - [] use next image component
 - [] Error management (w/ Sentry)
