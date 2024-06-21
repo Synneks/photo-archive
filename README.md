@@ -19,6 +19,7 @@ If you are not familiar with the different technologies used in this project, pl
 - [x] Add authentication (w/ Clerk)
 - [] Add image upload
 - [] "taint" (server-only)
+- [] use next image component
 - [] Error management (w/ Sentry)
 - [] Routing/image pate (parallel route)
 - [] Delete button (w/ Server Actions)
