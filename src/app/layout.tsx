@@ -35,8 +35,8 @@ export default function RootLayout({
         <body className={`font-sans ${inter.variable}`}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="dark"
+            enableSystem={true}
             disableTransitionOnChange
           >
             <TopNav />
