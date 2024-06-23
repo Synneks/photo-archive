@@ -1,6 +1,7 @@
 "use client";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { SimpleUploadButton } from "./simple-upload-button";
+import { toast } from "sonner";
 
 export function TopNav() {
   return (
@@ -14,6 +15,9 @@ export function TopNav() {
           <SimpleUploadButton />
           <UserButton />
         </SignedIn>
+        <button className="cursor-pointer" onClick={() => toast("caca")}>
+          Test Button{" "}
+        </button>
       </div>
     </nav>
   );
