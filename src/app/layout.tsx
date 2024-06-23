@@ -9,7 +9,7 @@ import { ourFileRouter } from "./api/uploadthing/core";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "~/components/theme-provider";
 import { CSPostHogProvider } from "./_analytics/providers";
-import { TopNav } from "./_components/topnav";
+import { Navbar } from "./_components/navigation-bar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,7 +42,7 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               <div className="grid-rows[auto,1fr] grid h-screen">
-                <TopNav />
+                <Navbar />
                 <main className="overflow-y-scroll">{children}</main>
               </div>
               {modal}
