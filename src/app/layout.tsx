@@ -9,6 +9,7 @@ import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "~/components/theme-provider";
+import { CSPostHogProvider } from "./_analytics/providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,23 +32,25 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-        <body className={`font-sans ${inter.variable}`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem={true}
-            disableTransitionOnChange
-          >
-            <div className="grid-rows[auto,1fr] grid h-screen">
-              <TopNav />
-              <main className="overflow-y-scroll">{children}</main>
-            </div>
-            {modal}
-            <div id="modal-root"></div>
-            <Toaster />
-          </ThemeProvider>
-        </body>
+        <CSPostHogProvider>
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+          <body className={`font-sans ${inter.variable}`}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem={true}
+              disableTransitionOnChange
+            >
+              <div className="grid-rows[auto,1fr] grid h-screen">
+                <TopNav />
+                <main className="overflow-y-scroll">{children}</main>
+              </div>
+              {modal}
+              <div id="modal-root"></div>
+              <Toaster />
+            </ThemeProvider>
+          </body>
+        </CSPostHogProvider>
       </html>
     </ClerkProvider>
   );
