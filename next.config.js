@@ -60,6 +60,9 @@ const config = withSentryConfig(coreConfig, {
   // https://docs.sentry.io/product/crons/
   // https://vercel.com/docs/cron-jobs
   automaticVercelMonitors: true,
+
+  // Added this to prevent Sentry from capturing errors in the build in Vercel
+  telemetry: false,
 });
 
 export default config;
