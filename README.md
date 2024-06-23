@@ -20,7 +20,7 @@ If you are not familiar with the different technologies used in this project, pl
 - [x] Add image upload
 - [x] "taint" (server-only)
 - [x] use next image component
-- [] Error management (w/ Sentry)
+- [x] Error management (w/ Sentry)
 - [] Routing/image pate (parallel route)
 - [] Delete button (w/ Server Actions)
 - [] Analytics (w/ Posthog)
