@@ -2,7 +2,6 @@ import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { TopNav } from "./_components/topnav";
 import "@uploadthing/react/styles.css";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
@@ -10,6 +9,7 @@ import { ourFileRouter } from "./api/uploadthing/core";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "~/components/theme-provider";
 import { CSPostHogProvider } from "./_analytics/providers";
+import { TopNav } from "./_components/topnav";
 
 const inter = Inter({
   subsets: ["latin"],
