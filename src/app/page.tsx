@@ -11,12 +11,12 @@ async function Images() {
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4">
       {[
-        ...images,
-        ...images,
-        ...images,
-        ...images,
-        ...images,
-        ...images,
+        // ...images,
+        // ...images,
+        // ...images,
+        // ...images,
+        // ...images,
+        // ...images,
         ...images,
       ].map((image) => (
         <div key={image.id} className="w-48">
