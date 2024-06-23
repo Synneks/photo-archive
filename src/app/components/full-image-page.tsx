@@ -3,29 +3,43 @@ import { clerkClient } from "@clerk/nextjs/server";
 import { getImage } from "~/server/queries";
 
 export default async function FullPageImageView(props: { id: number }) {
-    const image = await getImage(props.id);
-    const uploaderInfo = await clerkClient.users.getUser(image.userId);
-    
-    return (
-        <div className="flex h-full w-full min-w-0">
-      <div className="flex flex-shrink items-center justify-center">
-        <img
-          src={image.url}
-          alt={image.name}
-          className="flex-shrink object-contain"
+  const image = await getImage(props.id);
+  const uploaderInfo = await clerkClient.users.getUser(image.userId);
+
+  return (
+    <div className="flex h-full w-full">
+      <div className="flex flex-1 items-center justify-center">
+        <img src={image.url} alt={image.name} className="object-contain" />
+      </div>
+      <div className="flex flex-1 items-center border-l-4">
+        <ImageDetails
+          imageName={image.name}
+          imageCreatedAt={image.createdAt.toLocaleDateString()}
+          uploaderFullName={uploaderInfo.fullName}
         />
       </div>
-      <div className="flex w-48 flex-col items-center justify-center border-l">
-        <div className="border-b p-2 text-center text-xl font-bold">
-          {image.name}
-        </div>
-        <div className="flex flex-col p-2">
-          <span>Uploaded by: {uploaderInfo.fullName}</span>
-        </div>
+    </div>
+  );
+}
 
-        <div className="flex flex-col p-2">
-          <span>Created on: {image.createdAt.toLocaleDateString()}</span>
-        </div>
+function ImageDetails({
+  imageName,
+  imageCreatedAt,
+  uploaderFullName,
+}: {
+  imageName: string;
+  imageCreatedAt: string;
+  uploaderFullName: string | null;
+}) {
+  return (
+    <div className="w-full text-center">
+      <div className="border-b-4 p-2  text-xl font-bold">{imageName}</div>
+      <div className="p-2">
+        <span>Uploaded by: {uploaderFullName}</span>
+      </div>
+
+      <div className="p-2">
+        <span>Created on: {imageCreatedAt}</span>
       </div>
     </div>
   );
