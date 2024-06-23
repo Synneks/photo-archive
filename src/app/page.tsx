@@ -9,7 +9,7 @@ async function Images() {
   const images = await getUserImages();
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
+    <div className="flex flex-wrap items-baseline justify-center gap-4 p-4">
       {[
         // ...images,
         // ...images,

@@ -2,8 +2,12 @@
 import { clerkClient } from "@clerk/nextjs/server";
 import { getImage } from "~/server/queries";
 
-export default async function FullPageImageView(props: { id: number }) {
-  const image = await getImage(props.id);
+export default async function FullPageImageView(props: { id: string }) {
+  const idAsNumber = Number(props.id);
+  if (Number.isNaN(idAsNumber)) {
+    throw new Error("Invalid photo ID");
+  }
+  const image = await getImage(idAsNumber);
   const uploaderInfo = await clerkClient.users.getUser(image.userId);
 
   return (
