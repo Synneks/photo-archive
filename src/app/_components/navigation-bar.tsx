@@ -14,7 +14,6 @@ export function Navbar() {
           <SimpleUploadButton />
           <UserButton />
         </SignedIn>
-        adas
       </div>
     </nav>
   );
