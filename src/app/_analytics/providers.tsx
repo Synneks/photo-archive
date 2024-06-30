@@ -24,7 +24,6 @@ function PostHogAuthWrapper({ children }: { children: React.ReactNode }) {
   const userInfo = useUser();
 
   useEffect(() => {
-    console.log("userInfo");
     if (userInfo.user) {
       posthog.identify(userInfo.user.id, {
         email: userInfo.user.primaryEmailAddress,
