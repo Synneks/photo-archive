@@ -41,8 +41,8 @@ export default function RootLayout({
               enableSystem={true}
               disableTransitionOnChange
             >
-              <div className="grid-rows[auto,1fr] grid h-screen">
-                <Navbar />
+              <Navbar />
+              <div className="grid h-screen grid-rows-[auto,1fr]">
                 <main className="overflow-y-scroll">{children}</main>
               </div>
               {modal}
