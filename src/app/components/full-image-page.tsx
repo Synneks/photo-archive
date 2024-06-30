@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { clerkClient } from "@clerk/nextjs/server";
-import { getImage } from "~/server/queries";
+import { Button } from "~/components/ui/button";
+import { deleteImage, getImage } from "~/server/queries";
 
 export default async function FullPageImageView(props: { id: string }) {
   const idAsNumber = Number(props.id);
@@ -17,6 +18,7 @@ export default async function FullPageImageView(props: { id: string }) {
       </div>
       <div className="flex flex-1 items-center border-l-4">
         <ImageDetails
+          imageId={image.id}
           imageName={image.name}
           imageCreatedAt={image.createdAt.toLocaleDateString()}
           uploaderFullName={uploaderInfo.fullName}
@@ -27,10 +29,12 @@ export default async function FullPageImageView(props: { id: string }) {
 }
 
 function ImageDetails({
+  imageId,
   imageName,
   imageCreatedAt,
   uploaderFullName,
 }: {
+  imageId: number;
   imageName: string;
   imageCreatedAt: string;
   uploaderFullName: string | null;
@@ -44,6 +48,19 @@ function ImageDetails({
 
       <div className="p-2">
         <span>Created on: {imageCreatedAt}</span>
+      </div>
+
+      <div className="p-2">
+        <form
+          action={async () => {
+            "use server";
+            await deleteImage(imageId);
+          }}
+        >
+          <Button type="submit" variant="destructive">
+            Delete
+          </Button>
+        </form>
       </div>
     </div>
   );
