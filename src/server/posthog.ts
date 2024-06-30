@@ -1,3 +1,4 @@
+import "server-only";
 import { PostHog } from "posthog-node";
 
 //Posthog client for server side analytics
