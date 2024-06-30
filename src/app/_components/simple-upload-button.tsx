@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { useUploadThing } from "../utils/uploadthing";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -49,7 +49,7 @@ function UploadSVG() {
   );
 }
 
-export function LoadingSpinnerSVG() {
+function LoadingSpinnerSVG() {
   return (
     <svg
       width="24"
@@ -74,17 +74,6 @@ export function SimpleUploadButton() {
 
   const router = useRouter();
 
-  useEffect(() => {
-    toast(
-      <div className="flex items-center gap-2">
-        <LoadingSpinnerSVG /> <span className="text-l">Uploading...</span>
-      </div>,
-      {
-        id: "upload-begin",
-      },
-    );
-  }, []);
-
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin() {
       posthog.capture("upload_begin");
@@ -93,9 +82,15 @@ export function SimpleUploadButton() {
           <LoadingSpinnerSVG /> <span className="text-l">Uploading...</span>
         </div>,
         {
+          duration: 10000,
           id: "upload-begin",
         },
       );
+    },
+    onUploadError(error) {
+      posthog.capture("upload_error", { error });
+      toast.dismiss("upload-begin");
+      toast.error("Upload failed");
     },
     onClientUploadComplete() {
       toast.dismiss("upload-begin");
@@ -103,6 +98,7 @@ export function SimpleUploadButton() {
       router.refresh();
     },
   });
+
   return (
     <div>
       <label htmlFor="upload-button" className="cursor-pointer">

@@ -57,7 +57,5 @@ export async function deleteImage(id: number) {
     },
   });
 
-  await analyticsServerClient.shutdown();
-
   redirect("/");
 }
