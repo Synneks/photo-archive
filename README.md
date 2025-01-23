@@ -1,13 +1,43 @@
-# T3 Gallery App
+# Photo Gallery
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Photo Gallery is a web application for sharing and exploring photos usint uploadThing with robust authentication and user management.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Tech Stack
+
+### Frontend
+
+- Next.js 14
+- React
+- Tailwind CSS
+- Radix UI
+- shadcn/ui components
+
+### Backend
+
+- TypeScript
+- Drizzle ORM
+- Vercel Postgres
+- Upstash Redis
+
+### Authentication & Services
+
+- Clerk Auth
+- UploadThing (file uploads)
+- Sentry (error tracking)
+- PostHog (analytics)
+
+### Features
+
+- Secure user authentication
+- Photo uploading
+- Rate limiting
+- Dark/light mode
+- Error monitoring
+
+Prerequisites
+
+Node.js
+PostgreSQL
 
 ## TODO
 

@@ -32,7 +32,7 @@ const config = withSentryConfig(coreConfig, {
   // https://github.com/getsentry/sentry-webpack-plugin#options
 
   org: "densoft-solutions-srl",
-  project: "t3gallery",
+  project: "photo-gallery",
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
